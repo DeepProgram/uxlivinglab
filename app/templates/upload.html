@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Extractor</title>
+</head>
+<body>
+    <h1>Upload PDF</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="email" name="email" required placeholder="Your Email">
+        <input type="file" name="file" accept="application/pdf" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('upload-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const response = await fetch('/api/upload/', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Content-Disposition': `attachment; filename=test`
+                },
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result);
+        };
+    </script>
+</body>
+</html>
