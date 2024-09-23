@@ -25,7 +25,6 @@ jobs:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO_NAME }}
           tags: |
             type=raw,value=latest
-            type=sha
       
       - name: Build And Push Docker Image
         uses: docker/build-push-action@v5
