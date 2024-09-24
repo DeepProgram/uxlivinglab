@@ -13,6 +13,7 @@ mongoengine = "^0.29.1"
 pymupdf = "^1.24.10"
 nltk = "^3.9.1"
 pypdf2 = "^3.0.1"
+django-dotenv = "^1.4.2"
 
 
 [build-system]
