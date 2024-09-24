@@ -2,11 +2,11 @@ services:
   web:
     build: .
     container_name: django_app
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:10000
     volumes:
       - ./:/usr/src/web/
     ports:
-      - 8009:8000
+      - 10000:10000
     env_file:
       - ./app/.env.dev
   
