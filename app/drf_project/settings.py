@@ -104,7 +104,10 @@ mongoengine.connect(
     port=int(os.environ.get("MONGO_PORT")),
     username=os.environ.get("MONGO_USER"),
     password=os.environ.get("MONGO_PASSWORD"),
-    db=os.environ.get("MONGO_DB")
+    db=os.environ.get("MONGO_DB"),
+    authentication_source='admin',
+    ssl=True,
+    tlsAllowInvalidCertificates=False
 )
 
 # Password validation
